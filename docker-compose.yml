@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  test-utilities:
+    build: .
+    container_name: test-utilities
+    volumes:
+      - ./:/opt/test-utilities:ro
+    working_dir: /opt
+    environment:
+      - PNPM_HOME=/pnpm
+      - PATH=$PNPM_HOME:$PATH
